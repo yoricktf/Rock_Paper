@@ -7,21 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <button id="rock" onclick="userInput">rock</button>
+    <button id="paper" onclick="userInput">paper</button>
+    <button id="scissors" onclick="userInput">scissors</button> -->
+
     <script>
-        //ask user for input either rock, paper or scissors
-        let userChoice = prompt("please pick either rock, paper or scissors");
-
-
-        //normalize the input so the computer can read it
-        function regulateUserSelection (userChoice) {
-            finalChoice = userChoice.tolowerCase();
-            if (finalChoice === 'rock' || finalChoice === 'paper' || finalChoice === scissors) {
-                console.log("good choice")
-            } else {
-                console.log("thats not a valid choice")
-            }
+     //get user input
+        let userChoice = prompt("please select either one");
+        function humanChoice (userChoice) {
+            if (userChoice === 'rock') {
+                console.log("rock")
+            } else if (userChoice === 'paper') {
+                console.log("paper")
+            } else if (userChoice === 'scissors') {
+                console.log("scissors")
+            } else {console.log("thats not a valid choice")}
         }
-        regulateUserSelection(userChoice)
+       humanChoice(userChoice);
+           
+
+
+
+
+
         
 
         //let the computer pick one at random
@@ -29,7 +37,6 @@
 
         function computerChoice (possibleChoice) {
            possibleChoice = possibleChoice[Math.floor(Math.random() * possibleChoice.length)];
-
             if (possibleChoice == 1) {
                 return "rock"
             } else if (possibleChoice == 2) {
