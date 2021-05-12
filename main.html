@@ -10,24 +10,36 @@
     <script>
         //ask user for input either rock, paper or scissors
         let userChoice = prompt("please pick either rock, paper or scissors");
+
+
         //normalize the input so the computer can read it
         function regulateUserSelection (userChoice) {
-            finalChoice = tolowercase(userChoice);
+            finalChoice = userChoice.tolowerCase();
             if (finalChoice === 'rock' || finalChoice === 'paper' || finalChoice === scissors) {
                 console.log("good choice")
             } else {
                 console.log("thats not a valid choice")
             }
         }
+        regulateUserSelection(userChoice)
         
-
-
-        
-
 
         //let the computer pick one at random
+        let possibleChoice = [1,2,3];
 
+        function computerChoice (possibleChoice) {
+           possibleChoice = possibleChoice[Math.floor(Math.random() * possibleChoice.length)];
 
+            if (possibleChoice == 1) {
+                return "rock"
+            } else if (possibleChoice == 2) {
+                return "paper"
+            } else if (possibleChoice == 3) {
+                return "scissors"
+            }
+        };
+console.log(computerChoice(possibleChoice));
+        
         //evaluate them against each other including tie
 
 
