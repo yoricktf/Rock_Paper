@@ -13,9 +13,10 @@
 
     <script>
     //get user input
-    let userChoice
-        function humanChoice (userChoice) {
-            userChoice = prompt("please select either one");
+     
+        function humanChoice () {
+            let userChoice = prompt("please select either one");
+            userChoice = userChoice.toLowerCase();
             if (userChoice === 'rock') {
                 console.log("rock");
                 return "rock";
@@ -47,19 +48,19 @@
     //output the result, win, loss or tie
         function evaluateWinner( computerChoice, humanChoice) {
             if ( computerChoice === 'rock' && humanChoice === 'scissors' || computerChoice === 'paper' && humanChoice === 'rock' || computerChoice === 'scissors' && humanChoice === 'paper' ) {
-                console.log("the computer has won!")
+                console.log(`You lost! ${computerChoice} beats ${humanChoice}`)
             } else if (humanChoice === 'rock' && computerChoice === 'scissors' || humanChoice == 'paper' && computerChoice === 'rock' || humanChoice === 'scissors' && computerChoice === 'paper' ) {
-                console.log("You won!")
+                console.log(`You won! ${humanChoice} beats ${computerChoice}`)
             } else if (humanChoice === 'rock' && computerChoice === 'rock' || humanChoice == 'paper' && computerChoice === 'paper' || humanChoice === 'scissors' && computerChoice === 'scissors' ) {
-                console.log("call it a draw")
+                console.log(`call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`)
             } else {console.log("fuck")}
         };
 
         function fullGame() {
         //  humanChoice(userChoice);
         //  computerChoice(possibleChoice);
-         evaluateWinner( computerChoice(possibleChoice), humanChoice(userChoice));
-         
+         evaluateWinner( computerChoice(possibleChoice), humanChoice());
+
         }
      fullGame();
 
