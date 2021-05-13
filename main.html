@@ -12,27 +12,23 @@
     <button id="scissors" onclick="userInput">scissors</button> -->
 
     <script>
-     //get user input
-        let userChoice = prompt("please select either one");
+    //get user input
+    let userChoice
         function humanChoice (userChoice) {
+            userChoice = prompt("please select either one");
             if (userChoice === 'rock') {
-                console.log("rock")
+                console.log("rock");
+                return "rock";
             } else if (userChoice === 'paper') {
-                console.log("paper")
+                console.log("paper");
+                return "paper";
             } else if (userChoice === 'scissors') {
-                console.log("scissors")
+                console.log("scissors");
+                return "scissors";
             } else {console.log("thats not a valid choice")}
         }
-       humanChoice(userChoice);
-           
-
-
-
-
-
-        
-
-        //let the computer pick one at random
+// humanChoice(userChoice);
+    // let the computer pick one at random
         let possibleChoice = [1,2,3];
 
         function computerChoice (possibleChoice) {
@@ -47,10 +43,25 @@
         };
 console.log(computerChoice(possibleChoice));
         
-        //evaluate them against each other including tie
+    //evaluate them against each other including tie
+    //output the result, win, loss or tie
+        function evaluateWinner(computerChoice,humanChoice) {
+            if ( computerChoice === 'rock' && humanChoice === 'scissors' || computerChoice === 'paper' && humanChoice === 'rock' || computerChoice === 'scissors' && humanChoice === 'paper' ) {
+                console.log("the computer has won!")
+            } else if (humanChoice === 'rock' && computerChoice === 'scissors' || humanChoice == 'paper' && computerChoice === 'rock' || humanChoice === 'scissors' && computerChoice === 'paper' ) {
+                console.log("You won!")
+            } else if (humanChoice === 'rock' && computerChoice === 'rock' || humanChoice == 'paper' && computerChoice === 'paper' || humanChoice === 'scissors' && computerChoice === 'scissors' ) {
+                console.log("call it a draw")
+            } else {console.log("fuck")}
+        };
 
+        function fullGame() {
+         humanChoice(userChoice);
+         computerChoice(possibleChoice);
+         evaluateWinner(computerChoice,humanChoice);
+     }
+     fullGame();
 
-        //output the result, win, loss or tie
     </script>
     
 </body>
