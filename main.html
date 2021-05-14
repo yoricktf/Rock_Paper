@@ -33,7 +33,7 @@
                 return "scissors";
             } else {console.log("thats not a valid choice")}
         }
-    // let the computer pick one at random
+    //let the computer pick one at random
         function computerChoice (possibleChoice) {
            possibleChoice = possibleChoice[Math.floor(Math.random() * possibleChoice.length)];
             if (possibleChoice == 1) {
@@ -49,8 +49,8 @@
         function evaluateWinner( computerChoice, humanChoice) {
             if 
                 (computerChoice === 'rock' && humanChoice === 'scissors' || 
-                computerChoice === 'paper' && humanChoice === 'rock' || 
-                computerChoice === 'scissors' && humanChoice === 'paper' ) 
+                    computerChoice === 'paper' && humanChoice === 'rock' || 
+                    computerChoice === 'scissors' && humanChoice === 'paper' ) 
                 {
                 console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
                 computerScore++;
@@ -58,8 +58,8 @@
             } 
             else if 
                 (humanChoice === 'rock' && computerChoice === 'scissors' ||
-                humanChoice == 'paper' && computerChoice === 'rock' || 
-                humanChoice === 'scissors' && computerChoice === 'paper' ) 
+                    humanChoice == 'paper' && computerChoice === 'rock' || 
+                    humanChoice === 'scissors' && computerChoice === 'paper' ) 
                 {
                 console.log(`You won! ${humanChoice} beats ${computerChoice}`);
                 userScore++;
@@ -71,15 +71,13 @@
         };
     //function to play 5 games 
         function fullGame(computerWon,userWon) {    
-    // making the counter 
+    //making the counter 
             while (computerScore < 5 && userScore < 5) {
                 evaluateWinner(computerChoice(possibleChoice),humanChoice());
             }
         }
-    // start the game by calling the function
+    //start the game by calling the function
         fullGame();
-     
-
     </script>
     
 </body>
