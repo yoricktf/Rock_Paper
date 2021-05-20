@@ -7,94 +7,26 @@
     <title>Document</title>
 </head>
 <body>
-
+<div id="container">
   <button id="rock" >rock</button>
   <button id="paper" >paper</button>
   <button id="scissors" >scissors</button>
-
-  <div class="display">
-      
-  </div>
-
-
-
-
-
+</div>
+<div id="gameMessage">
+</div>
+<div id="computerScore">
+</div>
+<div id="userScore">
+</div>
 
 
-    <script>
-        let 
-        computerWon,
-        userWon,
-        computerScore = 0,
-        userScore = 0,
-        possibleChoice = [1,2,3]
-        ;
-    //get user input
-        function humanChoice () {
-            let userChoice = prompt("please select either one");
-            userChoice = userChoice.toLowerCase();
-            if (userChoice === 'rock') {
-                console.log("you picked rock");
-                return "rock";
-            } else if (userChoice === 'paper') {
-                console.log("you picked paper");
-                return "paper";
-            } else if (userChoice === 'scissors') {
-                console.log("you picked scissors");
-                return "scissors";
-            } else {console.log("thats not a valid choice")}
-        }
-    //let the computer pick one at random
-        function computerChoice (possibleChoice) {
-           possibleChoice = possibleChoice[Math.floor(Math.random() * possibleChoice.length)];
-            if (possibleChoice == 1) {
-                return "rock"
-            } else if (possibleChoice == 2) {
-                return "paper"
-            } else if (possibleChoice == 3) {
-                return "scissors";
-            }
-        };      
-    //evaluate them against each other including tie
-    //output the result, win, loss or tie
-        function evaluateWinner( computerChoice, humanChoice) {
-            if 
-                (computerChoice === 'rock' && humanChoice === 'scissors' || 
-                    computerChoice === 'paper' && humanChoice === 'rock' || 
-                    computerChoice === 'scissors' && humanChoice === 'paper' ) 
-                {
-                console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
-                computerScore++;
-                console.log(`the computers score is ${computerScore}`)
-            } 
-            else if 
-                (humanChoice === 'rock' && computerChoice === 'scissors' ||
-                    humanChoice == 'paper' && computerChoice === 'rock' || 
-                    humanChoice === 'scissors' && computerChoice === 'paper' ) 
-                {
-                console.log(`You won! ${humanChoice} beats ${computerChoice}`);
-                userScore++;
-                console.log(`Your score is ${userScore}`)
-            } 
-            else {
-                console.log(`call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`)
-            } 
-        };
-
-        // evaluateWinner( computerChoice(possibleChoice), humanChoice())
 
 
-    //function to play 5 games 
-    //     function fullGame(computerWon,userWon) {    
-    // //making the counter 
-    //         while (computerScore < 5 && userScore < 5) {
-    //             evaluateWinner(computerChoice(possibleChoice),humanChoice());
-    //         }
-    //     }
-    //start the game by calling the function
-        // fullGame();
-    </script>
+
+
+
+
     
 </body>
+<script src="javascript.js"></script>
 </html>
