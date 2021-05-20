@@ -24,7 +24,7 @@ const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.id)
+        // console.log(button.id)
         evaluateWinner( computerChoice(possibleChoice), button.id)
     });
 });
@@ -38,10 +38,11 @@ function evaluateWinner( computerChoice, humanChoice) {
             computerChoice === 'paper' && humanChoice === 'rock' || 
             computerChoice === 'scissors' && humanChoice === 'paper' ) 
         {
-        document.getElementById('gameMessage').innerHTML = `You lost! ${computerChoice} beats ${humanChoice}`;
-        console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
-        document.getElementById("computerScore").innerHTML = `the computers score is ${computerScore}`;
         computerScore++;
+        document.getElementById('gameMessage').innerHTML = `You lost! ${computerChoice} beats ${humanChoice}`;
+        // console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
+        document.getElementById("computerScore").innerHTML = `the computers score is ${computerScore}`;
+        
         // console.log(`the computers score is ${computerScore}`)
     } 
     else if 
@@ -49,14 +50,16 @@ function evaluateWinner( computerChoice, humanChoice) {
             humanChoice == 'paper' && computerChoice === 'rock' || 
             humanChoice === 'scissors' && computerChoice === 'paper' ) 
         {
-        document.getElementById('gameMessage').innerHTML = `You won! ${humanChoice} beats ${computerChoice}`
-        console.log(`You won! ${humanChoice} beats ${computerChoice}`);
-        document.getElementById("userScore").innerHTML = `Your score is ${userScore}`
         userScore++;
+        document.getElementById('gameMessage').innerHTML = `You won! ${humanChoice} beats ${computerChoice}`
+        // console.log(`You won! ${humanChoice} beats ${computerChoice}`);
+        document.getElementById("userScore").innerHTML = `Your score is ${userScore}`
+        
         // console.log(`Your score is ${userScore}`)
     } 
     else {
-        console.log(`call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`)
+        document.getElementById("gameMessage").innerHTML = `call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`;
+        // console.log(`call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`)
     } 
 };
 
