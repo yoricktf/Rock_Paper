@@ -7,11 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
+
+
     <!-- <button id="rock" onclick="userInput">rock</button>
     <button id="paper" onclick="userInput">paper</button>
     <button id="scissors" onclick="userInput">scissors</button> -->
     <script>
-        let 
+        let
         computerWon,
         userWon,
         computerScore = 0,
@@ -43,35 +48,35 @@
             } else if (possibleChoice == 3) {
                 return "scissors";
             }
-        };      
+        };
     //evaluate them against each other including tie
     //output the result, win, loss or tie
         function evaluateWinner( computerChoice, humanChoice) {
-            if 
-                (computerChoice === 'rock' && humanChoice === 'scissors' || 
-                    computerChoice === 'paper' && humanChoice === 'rock' || 
-                    computerChoice === 'scissors' && humanChoice === 'paper' ) 
+            if
+                (computerChoice === 'rock' && humanChoice === 'scissors' ||
+                    computerChoice === 'paper' && humanChoice === 'rock' ||
+                    computerChoice === 'scissors' && humanChoice === 'paper' )
                 {
                 console.log(`You lost! ${computerChoice} beats ${humanChoice}`);
                 computerScore++;
                 console.log(`the computers score is ${computerScore}`)
-            } 
-            else if 
+            }
+            else if
                 (humanChoice === 'rock' && computerChoice === 'scissors' ||
-                    humanChoice == 'paper' && computerChoice === 'rock' || 
-                    humanChoice === 'scissors' && computerChoice === 'paper' ) 
+                    humanChoice == 'paper' && computerChoice === 'rock' ||
+                    humanChoice === 'scissors' && computerChoice === 'paper' )
                 {
                 console.log(`You won! ${humanChoice} beats ${computerChoice}`);
                 userScore++;
                 console.log(`Your score is ${userScore}`)
-            } 
+            }
             else {
                 console.log(`call it a draw, you picked ${humanChoice} and the computer picked ${computerChoice}`)
-            } 
+            }
         };
-    //function to play 5 games 
-        function fullGame(computerWon,userWon) {    
-    //making the counter 
+    //function to play 5 games
+        function fullGame(computerWon,userWon) {
+    //making the counter
             while (computerScore < 5 && userScore < 5) {
                 evaluateWinner(computerChoice(possibleChoice),humanChoice());
             }
@@ -79,6 +84,7 @@
     //start the game by calling the function
         fullGame();
     </script>
-    
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>
